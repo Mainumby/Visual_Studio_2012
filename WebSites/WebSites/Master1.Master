@@ -1,0 +1,52 @@
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="WebSites.Master1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <title><%: Page.Title %> - SatDev - Ejemplo de Pagina Maestra</title>
+    
+     <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+        <div class="content-wrapper">
+            <div>
+                <p><%--logo aca--%></p>
+            </div>
+            <div>
+                <section id="login"></section>
+                <nav>
+                    <ul id="menu">
+                        <li><a href="Default.aspx">Default</a></li>
+                        <li><a href="About.aspx">About</a></li>
+
+
+                    </ul>
+                </nav>
+            </div>
+            
+            
+        </div>
+
+
+
+        </header>
+    <div id="body">
+        <asp:ContentPlaceHolder ID="FeaturedContent" runat="server">
+            <section>
+                <asp:ContentPlaceHolder runat="server" ID="MainContent"/>
+            </section>
+        </asp:ContentPlaceHolder>
+    </div>
+    <footer>
+        <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+    </footer>
+    </form>
+</body>
+</html>
