@@ -1,0 +1,35 @@
+﻿@*ubicando los scripts dentro  de este seccion, no importa el lugar donde sean declarados, terminaran renderizados 
+al final luego de que se cargue jquery*@
+
+@section scripts{
+<script type="text/javascript">
+    @*HARCODING DE LOS DATOS*@
+    $(document).ready(function () {
+        $.getJSON('/api/Beers', function (data) {
+            //alert(data); lanzamos una alertap para probar si recibimos algo
+            //creamos un view model que recibe el array data donde esta contenida los datos JSON que recibimos
+            var vm = { beers: data };
+            //usamos Knockout y aplicamos un binding al viewmodel
+            ko.applyBindings(vm);
+        });
+    });
+</script>
+    }
+ 
+<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">ASP.NET Web API</a></p>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <table data-bind="foreach: beers">
+        <tr>
+            <td data-bind="text: Name"></td>
+            <td data-bind="text: Brewery"></td>
+            <td data-bind="text: Ibus"></td>
+        </tr>
+    </table>
+</div>

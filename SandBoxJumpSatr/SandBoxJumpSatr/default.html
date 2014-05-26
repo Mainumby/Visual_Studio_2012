@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>SandBoxJumpStart</title>
+
+    <!-- Referencias de WinJS -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- Referencias de SandBoxJumpSatr -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body>
+   <section style="margin-left: 120px; margin-top:45px;">
+       <hgroup>
+           <h1>Markup</h1>
+           <h2>Demo</h2>
+       </hgroup>
+       <p>Favorites:</p>
+       <form onsubmit="marioup.play();return false;">
+           <input id="favUrl" type="url" required="required" placeholder="http://www.palermo4.com" />
+           <input type="submit" value="Save..." />
+       </form>
+       <audio src="audio/mario1up.mp3" id="marioup" />
+   </section>
+</body>
+</html>
